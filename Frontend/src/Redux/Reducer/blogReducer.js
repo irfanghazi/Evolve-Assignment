@@ -31,6 +31,7 @@ export const getAddBlogReducer = (state = {}, action) => {
       return {
         loading: false,
         success: true,
+        blogging: action.payload,
       };
     case "ADD_BLOG_FAIL":
       return {

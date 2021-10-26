@@ -23,7 +23,7 @@ const AddNewBlog = () => {
       status,
       order,
     };
-    console.log(blogging);
+    console.log("data:", blogging);
     dispatch(addBlog(blogging));
   };
   return (

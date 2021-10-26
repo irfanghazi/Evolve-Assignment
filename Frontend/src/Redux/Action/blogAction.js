@@ -12,10 +12,13 @@ export const getAllBlogAction = () => async (dispatch) => {
 };
 
 export const addBlog = (blogging) => async (dispatch) => {
+  console.log("action:", blogging);
   dispatch({ type: "ADD_BLOG_REQUEST" });
   try {
-    const res = await axios.post("/addblog", { blogging });
+    const res = await axios.post("/api/addblog", { blogging });
+    console.log("action res:", res.data);
     dispatch({ type: "ADD_BLOG_SUCCESS", payload: res.data });
+    window.location.href = "/admin";
   } catch (error) {
     dispatch({ type: "ADD_BLOG_FAIL", payload: error });
   }
